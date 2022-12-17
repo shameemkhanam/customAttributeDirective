@@ -1,6 +1,14 @@
 .container{
-  height: 60px;
+  /* height: 60px;
   padding: 10px;
   display: flex;
-  align-items: center;
+  align-items: center; */
+
+  margin: 10px 20px;
+  padding: 10px 20px;
+}
+
+.change_font{
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
 }

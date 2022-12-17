@@ -1,5 +1,17 @@
 <h2 setBackground>This is App Component</h2>
-<div class="container" setBackground>
+<div class="container" setBackground appHover>
   <p>This is a paragraph for the custom attribute directive..</p>
 </div>
 <!-- setBackground ==> custom attribute directive-->
+<!-- ------------------ -->
+<div appHighlight appHover>
+  <p>This is a paragraph for the custom attribute directive..</p>
+</div>
+<!-- @HostBinding -->
+<!-- using an alias of highlightColor prop as the same name as directive name, we can use as ngStyle , within square brackets -->
+<div class="container" [appBetterhighlight]="'blue'" [defaultColor]="'yellow'">
+  <p>This is a paragraph for the @HostBinding directive..</p>
+</div>
+<div [appClass]="{container: true, change_font: true}">
+  <p>This is a paragraph to demonstrate custom ngClass directive..</p>
+</div>
