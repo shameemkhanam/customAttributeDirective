@@ -15,3 +15,32 @@
 <div [appClass]="{container: true, change_font: true}">
   <p>This is a paragraph to demonstrate custom ngClass directive..</p>
 </div>
+
+<div class="container" [appStyle]="{backgroundColor:active ?'green':'red', color:'red', fontWeight:'bold'}">
+  <p>This is a paragraph to demonstrate custom ngStyle directive..</p>
+</div>
+<!-- ------------------ -->
+
+<!-- structural directive -->
+<button class="btn" (click)="displayNotice()">Show Notice</button>
+<!-- <div class="info_container notice" *ngIf="display; else elseTemplate">
+  <h3>This is important notice!</h3>
+  <p>This is a notice issued for all website users..</p>
+</div>
+<ng-template #elseTemplate>
+  <div class="info_container notice">
+    <p>It's an else part paragraph</p>
+  </div>
+</ng-template> -->
+<!-- internally angular converts *ngIf into [ngIf]---treats it as normal directive as below -->
+<ng-template [ngIf]="display" [ngIfElse]="elseTemplate">
+<div class="info_container notice" >
+  <h3>This is important notice!</h3>
+  <p>This is a notice issued for all website users..</p>
+</div>
+</ng-template>
+<ng-template #elseTemplate>
+  <div class="info_container notice">
+    <p>It's an else part paragraph</p>
+  </div>
+</ng-template>
