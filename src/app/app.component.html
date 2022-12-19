@@ -33,7 +33,7 @@
   </div>
 </ng-template> -->
 <!-- internally angular converts *ngIf into [ngIf]---treats it as normal directive as below -->
-<ng-template [ngIf]="display" [ngIfElse]="elseTemplate">
+<!-- <ng-template [ngIf]="display" [ngIfElse]="elseTemplate">
 <div class="info_container notice" >
   <h3>This is important notice!</h3>
   <p>This is a notice issued for all website users..</p>
@@ -43,4 +43,22 @@
   <div class="info_container notice">
     <p>It's an else part paragraph</p>
   </div>
-</ng-template>
+</ng-template> -->
+<!-- ------------------ -->
+<!-- <div class="info_container notice" appIf displayView="display"> it'll not work in case of structural directive as it can be used in attr directive-->
+
+<div class="info_container notice" *appIf="display">
+  <h3>This is important notice!</h3>
+  <p>This is a notice issued for all website users..</p>
+</div>
+
+<p *appIf="10>34">This is a demo paragraph..</p>
+
+<!-- ------------------ -->
+<!-- ngSwitch directive -->
+<div class="container" [ngSwitch] = "occupation">
+  <p *ngSwitchCase = "'teacher'">This paragraph will be displayed when the occupation is teacher.</p>
+  <p *ngSwitchCase = "'designer'">This paragraph will be displayed when the occupation is designer.</p>
+  <p *ngSwitchCase = "'lawyer'">This paragraph will be displayed when the occupation is lawyer.</p>
+  <p *ngSwitchDefault>This paragraph is default & displayed when no case matches with the switch expression</p>
+</div>

@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'CustomDirectives';
   active: boolean = true;
   display: boolean = false;
+  occupation: string = "lawyerr";
   displayNotice() {
     this.display = true;
   }
